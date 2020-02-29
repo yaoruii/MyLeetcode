@@ -19,14 +19,14 @@
 >同理，当该元素是最大值时，距离末尾（n/2+1）。上述都是位数，所以索引是n/2
 
 
-## 217 变形题：Contains Duplicate
+# 217 变形题：Contains Duplicate
 >Given an array of integers, find if the array contains any duplicates.
 >
 >Input: [1,2,3,1] Output: true
 
 根据上边的思路，可以用map，直接value一旦有==2的就返回true，也可以用sort()完后，i和i+1的元素相等即是有重复。
 
-## 219.变形题： Contains Duplicate II
+# 219.变形题： Contains Duplicate II
 
 >Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the absolute difference between i and j is at most k.
 >
