@@ -3,7 +3,7 @@
 求一个数是不是2的次方
 
 ## 递归法：
-**base case：
+**base case：**
 * n= 0,false;
 * n=1, true,0次方
 * n= 奇数，false;
