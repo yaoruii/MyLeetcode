@@ -1,4 +1,4 @@
-# 对树进行level order traversal
+# 102 对树进行level order traversal
 
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
@@ -16,3 +16,9 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 
 **注意二：在操作前先读取了当前队列的size，这样在操作的过程中即使新加了一些元素，也只会把属于该level的node仍出来**
 
+# 107 和102基本上就是一题：the bottom-up level order traversal 
+就是把102的res反过来，如何反过来，这一点体现了一些问题
+
+* 最简单的就是直接和102一样，得到res，再创建一个res2，一个个地加进去
+* 后来发现可以用LinkedList<>()来实现List，然后就可以用addFirst去添加每一个level，但是发现**addFirst是继承了deque的，就像offer是继承自queue和deque一样**
+* 忘记了最简单继承自list的方法：**add(index, element),让index=0即可**
