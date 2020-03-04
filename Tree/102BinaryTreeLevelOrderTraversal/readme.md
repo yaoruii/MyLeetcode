@@ -40,7 +40,10 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 * 忘记了最简单继承自list的方法：**add(index, element),让index=0即可**
 
 # 637 Average of Levels in Binary Tree
-
+## BFS:
 也是一道题，就是求出来同一个level的list后，对这些数据求个平均数，然后只把这个平均数放到res这个list中。
 * 求几个int整型的数的平均数的时候，要注意**数据出界的情况**
 * 所以求和的变量sum要声明为long整型
+
+## DFS:
+这道题用DFS的话，由于每一个level-list的元素都是逐步添加进去的，不是一起添加进去的，其size也就是要最后才能确定，所以可以引入一个新的list用于追踪level=i处的count，最后用res(i)=res(i)/count(i)返回res即可。
