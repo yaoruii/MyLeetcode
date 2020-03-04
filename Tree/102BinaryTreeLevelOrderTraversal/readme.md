@@ -28,6 +28,7 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 * 如果当前res的size=传入的level，也就是说传入的level对应的list还未声明（size = 最大索引+1），我们往res中加入一个新的level-list，并把当前被处理的node进去，然后我们递归调用该helper函数，对当前被处理的node的left,right child进行处理。
 * 先处理left,即重复第三步，当把left放进去，然后处理left的孩子，也是先left，处理完了，处理right，然后处理完了，再去处理步骤三带过来的right。
 * **美丽之处在于：** 对于res-list里面的每一个level-list,我们一开始只add了left的val，最后处理完left后，再去处理right时，定位到之前的level-list把当前处理的right的val加进去，这种定位得益于：**使用level这个变量去追踪，即使当前node的level也是其在res中的索引**，这样我们后来把right的结果也加进去就ok了。
+* helper()函数可以是void，不返回任何东西，在内部对res进行操作后，在主函数中声明定义的res也会跟着改变。最终在主函数调用helper()之后，再返回res即可。
 
 
 
