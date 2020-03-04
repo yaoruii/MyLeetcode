@@ -22,3 +22,7 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 * 最简单的就是直接和102一样，得到res，再创建一个res2，一个个地加进去
 * 后来发现可以用LinkedList<>()来实现List，然后就可以用addFirst去添加每一个level，但是发现**addFirst是继承了deque的，就像offer是继承自queue和deque一样**
 * 忘记了最简单继承自list的方法：**add(index, element),让index=0即可**
+
+# 637. Average of Levels in Binary Tree
+
+也是一
