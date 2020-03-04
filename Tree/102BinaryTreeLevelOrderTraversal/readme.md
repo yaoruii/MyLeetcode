@@ -2,7 +2,7 @@
 
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
-## BFS
+## 方法一：BFS+队列
 ### 不会写完全没思路，看了下代码，是BFS，尝试自己写
 自己写出来了代码
 
@@ -15,6 +15,7 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 **注意一：属于同一个level的node同时处于队列中，同时出去**
 
 **注意二：在操作前先读取了当前队列的size，这样在操作的过程中即使新加了一些元素，也只会把属于该level的node仍出来**
+## 方法二：DFS+递归
 
 # 107 和102基本上就是一题：the bottom-up level order traversal 
 就是把102的res反过来，如何反过来，这一点体现了一些问题
