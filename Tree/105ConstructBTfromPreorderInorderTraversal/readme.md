@@ -1,4 +1,4 @@
-# Construct Binary Tree from Preorder and Inorder Traversal
+# 105 Construct Binary Tree from Preorder and Inorder Traversal
 
 Given preorder and inorder traversal of a tree, construct the binary tree.
 
@@ -18,3 +18,8 @@ Given preorder and inorder traversal of a tree, construct the binary tree.
 * **根据根结点找到其在inorder中的索引**：这个问题可以通过创建一个map将最开始完整tree的inorder数组的元素和其索引映射，get(key)就可以得到每一个root的索引。
 
 * 算法很重要，数据结构同样重要（ArrayList对于时间复杂度真的可怕），一些重复计算如果可以只计算一次更可以节省时间（不过可能需要多创建一个变量保存之了，这是一个博弈？）
+
+# 106 Construct Binary Tree from Inorder and Postorder Traversal
+105的变形题，这次是根据inorder和postorder的结果进行构建tree
+
+方法是一样的，two pointers + recursion + 分清inorder和postorder这两个数组的组成成分。
