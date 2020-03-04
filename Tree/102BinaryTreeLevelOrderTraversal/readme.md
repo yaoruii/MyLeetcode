@@ -25,4 +25,6 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 
 # 637. Average of Levels in Binary Tree
 
-也是一
+也是一道题，就是求出来同一个level的list后，对这些数据求个平均数，然后只把这个平均数放到res这个list中。
+* 求几个int整型的数的平均数的时候，要注意**数据出界的情况**
+* 所以求和的变量sum要声明为long整型
