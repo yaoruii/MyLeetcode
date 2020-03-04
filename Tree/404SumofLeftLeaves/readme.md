@@ -8,5 +8,6 @@ this one is just like 102 and 103, we can see it as level-level traversal but pu
 
 ## 学习别人的递归法：100%，98%
 base case :
-会
-base使sum
+会使sum有所增加的base case:  
+**root.left!=null && root.leaf.left == null && root.lefe.right == null**  
+因为：我们认为光秃秃的root是0，不是leaf，所以必须要借由真正的左Leaf的parent-上式的root去access the left leaf. 这样是方便的，因为这样就不用判断某一个光秃秃的node是不是左leaf了，因为我们不判断光秃秃的node了。right leaf压根没有被加的机会，只会沦为光秃秃的node后被返回0.
