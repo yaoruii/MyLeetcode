@@ -1,5 +1,5 @@
 # preorder、inorder、postorder traversal 汇总
-## preorder:
+## 144 preorder:
 先root,再left,再right
 ### 递归：
 ```
@@ -42,3 +42,5 @@ preHelper(root.left,pre);
 pre.add(root.val);
 preHelper(root.right,pre);
 ```
+## 145 postorder
+是道hard，有点意思，主要在于迭代法
