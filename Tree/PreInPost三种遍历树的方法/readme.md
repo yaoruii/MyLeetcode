@@ -33,3 +33,12 @@ public List<Integer> preorderTraversal(TreeNode root) {
         return fringe;
   ```
   
+## inorder
+先左，在root,后右
+### 递归：
+```
+if(root==null) return;
+preHelper(root.left,pre);
+pre.add(root.val);
+preHelper(root.right,pre);
+```
