@@ -44,6 +44,10 @@ public List<Integer> rightSideView(TreeNode root) {
 这道题和写完199后写到的，立刻就想到了BFS，因为和之前的level-level traversal本质上还是一样的，traversal的过程中，给当前正在被处理的node的next赋值。
 **和上边的199一样，这样的方法时间比较久，performance 不也太好，先把今天的第三题写了，然后再说**
 
+## DFS：
+学习了199的dfs，进行尝试。以及117的启发，它是一个完美树，这意味这什么呢？
+
+
 # 117. Populating Next Right Pointers in Each Node II
 看到117，我才发现116给定的tree是perfect tree，就是平衡的：
 >You are given a **perfect binary tree** where all leaves are on the same level, and every parent has two children. The binary tree has the following definition
