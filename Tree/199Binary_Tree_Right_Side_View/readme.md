@@ -14,9 +14,28 @@ Explanation:
 ## BFS:Level-level traversal的变形：1ms，78%
 我想出的方法：我觉得这是Level-level traversal的变形，因为我们依旧是按照Level-level traversal整个tree，只是在每一个level的最后一个元素被poll()出来时，把它加在res中
 
-##DFS:学习
-
-
+## DFS:学习, 0ms, 100%, dfs会快一点
+**看了下递归的代码，和BFS一样，依旧类似于当初学习BFS、DFS时看的那份代码一样，不过action有所改变罢了，DFS的action还是有点难消化，但本质还是一样**
+```
+public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> view = new ArrayList<>();
+        dfs(root, view, 0);
+        return view;
+        
+    }
+    public void dfs(TreeNode root, List<Integer> res, int depth){
+        if(root == null) return;
+        /*47-49 是action*/
+        if(res.size() == depth){//说明这一层的node还未被遍历,如果已经被遍历，说明此时的root不是最右，什么都不做
+            res.add(root.val);
+        }//action仅仅在遇到depth==size时有。
+        /*接下来是dfs(v),递归*/
+        if(root.right != null) dfs(root.right, res, depth+1);//call这个后，就会一路沿着最右走下去，直到null，
+        //然后往上走（也就是所谓的return最后一个递归）（开始倒数第二个递归call的left），找倒数第二右，
+        //最后来到了整个树的root的left child，然后也是一路最右地走下去
+        if(root.left != null) dfs(root.left, res, depth+1);
+    }
+```
 # 116. Populating Next Right Pointers in Each Node
 ```
 给node的next赋值，next指向和node在同一个level的其右边的node，最右边的是null
