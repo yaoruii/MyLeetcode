@@ -12,7 +12,7 @@
 
     
 ```
-TreeNode small;
+         TreeNode small;
         TreeNode big;
         if(p.val < q.val) {
             small = p;
