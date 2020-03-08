@@ -11,3 +11,20 @@
     * 如果两者同时分布在右侧，那么就可以递归调用该函数，此时的root会被传入root.right
 
     
+```
+TreeNode small;
+        TreeNode big;
+        if(p.val < q.val) {
+            small = p;
+            big = q;
+        }
+        else{
+            small = q;
+            big = p;
+        }
+        if(small.val <= root.val && big.val>= root.val) return root;
+        else if(small.val> root.val) return lowestCommonAncestor(root.right, p, q);
+        else {
+            return lowestCommonAncestor(root.left, p, q);
+        }
+```
