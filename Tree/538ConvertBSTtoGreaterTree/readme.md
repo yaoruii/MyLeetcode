@@ -30,3 +30,5 @@ Output: The root of a Greater Tree like this:
    * 从整体的tree来看，先把root.right转换完，转换完的结果是新root的right, 然后把root转换了，再把root,left转换了，同理是新root的left。
    * hhhhhhhhhhhh，前边都是傻逼了，可以直接改变原来的node的val，然后就ok了，让root.val = sum;
    * 简直傻逼透了，既然可以让newroot.right = right，为啥不可以直接让val=sum。。。。
+   * 由于是在原来的那个tree的node的基础上改的，所以也不需要保存递归返回的结果了。
+
