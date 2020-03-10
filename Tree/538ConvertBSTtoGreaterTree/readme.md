@@ -32,3 +32,15 @@ Output: The root of a Greater Tree like this:
    * 简直傻逼透了，既然可以让newroot.right = right，为啥不可以直接让val=sum。。。。
    * 由于是在原来的那个tree的node的基础上改的，所以也不需要保存递归返回的结果了。
 
+```
+private int sum = 0;
+    public TreeNode convertBST(TreeNode root) {
+        if(root == null) return null;
+        //把右边的转换了
+        convertBST(root.right);
+        sum += root.val;
+        root.val = sum;
+        convertBST(root.left);
+        return root; 
+    }
+ ```
