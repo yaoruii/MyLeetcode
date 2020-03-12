@@ -42,5 +42,25 @@ preHelper(root.left,pre);
 pre.add(root.val);
 preHelper(root.right,pre);
 ```
+### 迭代+stack:
+```
+ /**iterating with stack!!*/
+List<Integer> list = new ArrayList<>();
+Stack<TreeNode> stack = new Stack<>();
+TreeNode curr = root;
+while(curr != null || ! stack.isEmpty()){//curr不为空，或者stack中有node
+    //stack的作用：一路往左，把元素暂存
+    while(curr != null){
+	stack.push(curr);//所有放进stack的node都不为空
+	curr = curr.left;//这两句：找到最左边的node，并把沿途的node放进stack
+    }
+    //退出这个while循环mean：已经找到最左，对其action
+    curr = stack.pop();//pop出来mean:act,加入到list中
+    list.add(curr.val);//action,已知curr无left，但不知是否有right，所以：
+    curr = curr.right;//把curr的right赋值为当前node,然后从头开始，和最一开始的root一样，当成一个新的tree。一路寻找最左，然后输出。   
+}
+return list;
+```
+
 ## 145 postorder
 是道hard，有点意思，主要在于迭代法
