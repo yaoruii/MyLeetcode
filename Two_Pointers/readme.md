@@ -19,6 +19,7 @@ for (i = 0; i < N; i++) {
 所以时间复杂度是 O(n2).
 
 **two pointers:**
+
 一个指向first element,另一个指向last element，将两指针的元素加在一起，如果和小于X，那么向右移动左边的指针，如果大于X，那么向左移动右边的指针。一直移动two pointers，直到找到正确的pairs，或者left >= right为止。
 ```
 int i = 0; 
