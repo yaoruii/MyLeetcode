@@ -27,14 +27,10 @@ while (i < j) {
     // If we find a pair 
     if (A[i] + A[j] == X) 
         return true;   
-    // If sum of elements at current 
-    // pointers is less, we move towards 
-    // higher values by doing i++ 
+    // If sum of elements at current pointers is less, we move towards higher values by doing i++ 
     else if (A[i] + A[j] < X) 
         i++; 
-    // If sum of elements at current 
-    // pointers is more, we move towards 
-    // lower values by doing j-- 
+    // If sum of elements at current pointers is more, we move towards lower values by doing j-- 
     else
         j--; 
 } 
