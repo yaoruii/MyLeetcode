@@ -1,3 +1,42 @@
 # two pointers
 
-...难
+## 数组
+对于有序数组，two pointers是一个很有效的方法，用来搜索pairs。
+
+给定一个有序数组，长度为N，找到是否存在一对数：A[i], A[j]，两者的和为x
+
+**传统方法: 两个for循环**
+```
+for (i = 0; i < N; i++) { 
+    for (j = 0; j < N; j++) { 
+        if (A[i] + A[j] == X) 
+            return true; // pair exists 
+        if (A[i] + A[j] > X) 
+            break; // as the array is sorted 
+    } 
+} 
+```
+所以时间复杂度是 O(n2).
+**two pointers:**
+一个指向first element,另一个指向last element，将两指针的元素加在一起，如果和小于X，那么向右移动左边的指针，如果大于X，那么向左移动右边的指针。一直移动two pointers，直到找到正确的pairs，或者left >= right为止。
+```
+int i = 0; 
+// represents second pointer 
+int j = N - 1; 
+while (i < j) { 
+    // If we find a pair 
+    if (A[i] + A[j] == X) 
+        return true;   
+    // If sum of elements at current 
+    // pointers is less, we move towards 
+    // higher values by doing i++ 
+    else if (A[i] + A[j] < X) 
+        i++; 
+    // If sum of elements at current 
+    // pointers is more, we move towards 
+    // lower values by doing j-- 
+    else
+        j--; 
+} 
+return false; 
+```
