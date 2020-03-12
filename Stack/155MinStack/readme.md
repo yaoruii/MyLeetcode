@@ -12,4 +12,7 @@ getMin() -- Retrieve the minimum element in the stack.
 思考：从构造上就追踪最小值？类似于list中的追踪size?
 * push()增加新元素的时候，追踪最小值很简单：新值< min, 更新min，否则不更新
 * pop()删除最上边的元素的时候：如果删除的是最小值，如果及时将min更新为删除后的最小值/删除前的倒数第二个小值？？？
-* 创建了另一个strack追踪一个个的min，老min永远最后被pop出去，新min永远在老min上边，所以当当前min被pop出去后，minstack中的下一个min即当前min出现前的min一定会是剩下的元素中的min
+* 创建了另一个strack追踪一个个的min，min.peek()是当前的min.
+* 老min永远最后被pop出去，新min永远在老min上边，所以当当前min被pop出去后，minstack中的下一个min即当前min出现前的min一定会是剩下的元素中的min
+* **当前最小值可能有重复的，比如很多个5，当pop出去一个5的时候，之前进入到堆栈里的其他5依旧是最小值，这要怎么办？**
+* 解决：push（）追踪min的时候，**新加入的元素如果等于当前min.peek()，也把新元素加入到min堆栈中**，这样新元素5被移除之后，老得5还在。
