@@ -1,6 +1,6 @@
 # two pointers
 
-## 数组: 3sums
+## 搜索一对和为target的元素: 3sums
 对于有序数组，two pointers是一个很有效的方法，用来搜索pairs。
 
 给定一个有序数组，长度为N，找到是否存在一对数：A[i], A[j]，两者的和为x
@@ -42,3 +42,5 @@ return false;
 给一个数组，表示一颗树的某种遍历得到的结果，去构建这棵树。
 
 使用two pointers去构建suntree的遍历结果，这样就不用生成新的subarray了。
+## 数组或者listnode操作：
+要注意null的问题，还有while啊for啊之类的细节
