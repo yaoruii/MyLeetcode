@@ -44,3 +44,4 @@ return false;
 使用two pointers去构建suntree的遍历结果，这样就不用生成新的subarray了。
 ## 数组或者listnode操作：
 要注意null的问题，还有while啊for啊之类的细节
+**需要死抠细节啊，i啊，什么时候结束循环啊，尤其是ListNode的题，就死抠**
