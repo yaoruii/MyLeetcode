@@ -14,4 +14,5 @@
 
 **为什么对字符数组排序后，不直接将其作为map的key，还费事转换为string？**
 
+https://blog.csdn.net/codejas/article/details/78837830
 设计Hashcode()最重要的因素就是：**对同一个对象调用code（）会产生同样的值！而String数据类型对这一性质有很好的支持，因为，String的hashcode()是根据内容设计的，而不是根据地址设计的**，如果直接用字符数组c，得到的hashcode是根据地址设计的，大家都不一样。
