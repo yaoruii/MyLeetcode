@@ -12,3 +12,5 @@
 ## follow up: binary search:
 
 >If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n). 
+
+这个题有个follow up，让我们用o(NlogN)的时间复杂度去求解，很明显地，在考察我们二分。
