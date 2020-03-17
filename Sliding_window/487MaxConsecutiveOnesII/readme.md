@@ -49,6 +49,23 @@ while(right < len){
 
 follow up: 
 ```
-What if the input numbers come in one by one as an infinite stream? In other words, you can't store all numbers coming from the stream as it's too large to hold in memory. Could you solve it efficiently?
+What if the input numbers come in one by one as an infinite stream?   
+In other words, you can't store all numbers coming from the stream as it's too large to hold in memory.   
+Could you solve it efficiently?
 ```
-就是说数组
+就是说数组是一个数一个数的朝我们走来，我们看到他了（遍历到它了）获取到他的数了，处理了他的价值了，然后离开他了，就再也无法获取到他的值了。
+
+这一属性唯一影响到的就是源代码中的：
+```
+while(zeros>k && left<= right){
+    /*这一个if语句 + while循环其实相当于我的方法中的：
+    不满足条件后，移动left到当前窗口0的下一个位置：
+    即：left=track
+    */
+    if(nums[left++] == 0) zeros--;//把left的更细写在[]中，美啊
+    //因为无论nums[left]和0什么关系，它都要++，所以写进去很简洁
+}
+```
+因为这几句是重新定位新的left的，如果用我自己之前的代码```left=track```,就不需要这样一个个遍历数组找新的left，所以对于follow，我自己的代码完美解决！！！
+
+**当K>1的时候，更加general的方法：使用一个队列保存这K个0的索引，下一个left= queue.poll() +1,先进先出。**
