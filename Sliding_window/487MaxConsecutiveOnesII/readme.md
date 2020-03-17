@@ -20,3 +20,5 @@ After flipping, the maximum number of consecutive 1s is 4.
 **上述和209这道题的区别：209是求最小的size，所以一旦满足条件，我们就进入while循环，在while循环内部计算min = math.min(min, right-left+1),如果一直不满足条件，一直不进入while循环，直到最后退出大的while循环，最后的right和left依旧是不满足条件的一对，所以不需要再最后再次计算一下**
 
 **但是本题487和159是求满足某个条件的最长的size，*其实是一旦不满足条件*，我们进入while循环，所以不能在while循环内部计算max= math.max(max, right-left），因为*可能要最后的要退出大while循环了，依旧是满足条件的，这个时候的长度也要考虑进去就要在最后再计算一次，比较丑陋***
+
+**上边是解释了这几题的一点小区别，但是本质上487还是209题，求最长的XXXXXXXXX的数组长度**
