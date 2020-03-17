@@ -10,4 +10,6 @@
 
 ### 2，[3题，最长的不含重复字符的substring](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
-### 3, []
+### 3, [159题，最长的至多只有两（K）个不同的字符的substring](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)
+
+### 4, [438题，找到所有的同字异形的substring](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
