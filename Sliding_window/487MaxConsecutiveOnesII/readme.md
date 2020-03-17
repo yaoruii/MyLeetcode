@@ -1,4 +1,4 @@
-# 487. Max Consecutive Ones II
+# 487/1004. Max Consecutive Ones II/III
 ```
 Input: [1,0,1,1,0]
 Output: 4
