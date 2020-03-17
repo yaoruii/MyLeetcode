@@ -15,6 +15,8 @@ After flipping, the maximum number of consecutive 1s is 4.
 * 如果当前的left不是0，则什么都不做
 * 最后left++，相当于右移了一位。
 
-**注意：一旦进入while循环，说明当前的left已经寻找结束，如果在while循转里面计算max= math,max(max, right-left）有一个缺点就是，如果最后right一路到最后一个元素，都符合条件，无法进入到while循环，那么还需要最后
-* 如果当前的left不是0，则什么都不做的
-* 如果当前的left不是0，则什么都
+**注意：一旦进入while循环，说明当前的left已经寻找结束，如果在while循转里面计算max= math.max(max, right-left）有一个缺点就是，如果最后right一路到最后一个元素，都符合条件，无法进入到while循环，那么还需要最后退出整个while(right<len)循环后，再次计算一下max= math.max(max, right-left），代码就很丑。**
+
+**上述和209这道题的区别：209是求最小的size，所以一旦满足条件，我们就进入while循环，在while循环内部计算min = math.min(min, right-left+1),如果一直不满足条件，一直不进入while循环，直到最后退出大的while循环，最后的right和left依旧是不满足条件的一对，所以不需要再最后再次计算一下**
+
+**但是本题487和159是求满足某个条件的最长的size，*其实是一旦不满足条件*，我们进入while循环，所以不能在while循环内部计算max= math.max(max, right-left），因为*可能要最后的要退出大while循环了，依旧是满足条件的，这个时候的长度也要考虑进去就要在最后再计算一次，比较丑陋***
