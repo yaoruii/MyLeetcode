@@ -24,3 +24,25 @@ After flipping, the maximum number of consecutive 1s is 4.
 **上边是解释了这几题的一点小区别，但是本质上487还是209题，求最长的XXXXXXXXX的数组长度**
 
 # 487的follow up:
+```
+while(right < len){
+            if(nums[right]==0){
+                //遇到0了，更新0的个数
+                zeros++;
+            }
+            //看看现在几个0了，符不符合条件：符合就更新max,继续配对合适的right
+            //不符合就进入while循环，配对结束：不需要更新max，因为符合的时候一直都在更新
+            while(zeros>k && left<= right){
+                /*这一个if语句 + while循环其实相当于我的方法中的：
+                不满足条件后，移动left到当前窗口0的下一个位置：
+                即：left=track
+                */
+                if(nums[left++] == 0) zeros--;//把left的更细写在[]中，美啊
+                //因为无论nums[left]和0什么关系，它都要++，所以写进去很简洁
+            }
+            max = Math.max(max, right - left +1);
+            right++;   
+        }
+        return max;
+```
+这是原题的代码
