@@ -46,3 +46,9 @@ while(right < len){
         return max;
 ```
 这是原题的代码
+
+follow up: 
+```
+What if the input numbers come in one by one as an infinite stream? In other words, you can't store all numbers coming from the stream as it's too large to hold in memory. Could you solve it efficiently?
+```
+就是说数组
