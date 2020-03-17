@@ -9,7 +9,7 @@ Explanation: t is "aabbb" which its length is 5.
 
 
 
-# 340 340. Longest Substring with At Most K Distinct Characters（general 版本）
+# 340 Longest Substring with At Most K Distinct Characters（general 版本）
 
 ## 同上
 
