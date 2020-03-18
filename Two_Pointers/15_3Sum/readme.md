@@ -26,6 +26,9 @@ If it exists, we have found a solution and return immediately.
 ## 2sum的变形：固定一个start后，要在剩下的数组中找两个数
 这道题不要求返回索引，所以可以sort(), 然后在剩下的数组中使用两头夹击方法寻找pairs。
 
+# 18 4Sum
+
+# general KSum
 
 
 
