@@ -100,6 +100,7 @@ public int findMin(int[] nums) {
 **所以上述代码用于33题➕153题**
 
 **至于81题➕154题：上述两题的数组有重复元素的变形题**
+**区别在于：当nums[mid]==nums[hi]的时候：如果当前的hi 就是结果，那么nums[hi-1]是最大的元素，大于当前的hi，否则，直接hi--即可
 ```
 public int findMin(int[] nums) {
         int lo = 0; int  hi = len-1; int mid;
