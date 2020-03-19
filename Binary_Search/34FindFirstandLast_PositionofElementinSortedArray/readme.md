@@ -28,6 +28,10 @@
 > if nums[mid]> target: range should begin on left of mid, >>> j = mid-1  
 > 可以将第一二条合并：if nums[mid] <= target: range should begin on right of mid or on mid, >>> i = mid 
 
-** 
+**但是，这里有一个问题，上述规则让i = mid or j = mid-1，所以当i == mid的情况下，陷入了死循环，永远无法结束，而寻找左边界的时候，是让j= mid，j永远都不会==mid，所以不会出现在这个问题。**
+
+**解决方法：让mind = (i+j+1)/2，而不是上边的（i+j)/2，The easiest way to achieve this is by making mid biased to the right, i.e. mid = (i+j)/2+1.由于，我们永远都不会让j = mid，所以这样就解决了问题。而寻找左边界的时候，永远都不会让i=mid，所以可以让mid biased to the left**
+
+
 
 
