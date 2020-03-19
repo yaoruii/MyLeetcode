@@ -75,3 +75,53 @@ public int findMin(int[] nums) {
 **emmmmm，所以用这个思路把33，81，153，154这四题全部给做了，还去发了一个post，然后我才意识到我根本没用binary search啊，而且我时间复杂度是o(n),我觉得不行。。。。。。。。。。。。。。。。。。。。。。需要重写。。。。。。。。。。。。把帖子删了吧。。。。。。。。。。**
 
 ## hhhhh,看了一下，我是寻找最小的元素的索引那块，也就是153题是o(n),整体的33题思路是对的，所以要把153二分查找学习一下
+```
+public int findMin(int[] nums) {
+         int len = nums.length;
+	int lo = 0; int hi = len-1;
+	if(nums[lo] < nums[hi])  return nums[lo];
+	int mid;
+	while(lo < hi){
+	    mid = lo + (hi-lo)/2;
+	    if(nums[mid] < nums[hi]){//说明mid和end at the same part,因为是增序
+		//最小的元素可能是mid或者在mid的左侧
+		//所以end=mid，下一轮继续和end比较
+		hi = mid;
+	    }
+	    else{//mid> hi元素，说明处于不用的part，mid在前一个,hi在第二个
+		//最小的元素一定在mid的右侧，所以lo = mid+1
+		//mid= hi元素。。。鉴于没有重复的元素，不会发生
+		lo = mid+1;
+	    }  
+	}
+	return nums[lo];
+	}
+```
+**所以上述代码用于33题➕153题**
+
+**至于81题➕154题：上述两题的数组有重复元素的变形题**
+```
+public int findMin(int[] nums) {
+        int lo = 0; int  hi = len-1; int mid;
+        while(lo < hi){
+            mid = lo + (hi - lo)/2;
+            if(nums[mid] < nums[hi]){
+                //处于同一个part，最小值为mid或者在mid的左侧
+                hi = mid;
+            }
+            else if(nums[mid] > nums[hi]){
+                lo = mid+1;
+            }
+            else{//mid == end,无法确定最小值在哪一部分，只好hi--
+                //但是在hi--的过程中，可能就错过了用于84题的最下值的索引
+                //所以就像你自己的方法的核心是一样的，如果前个数比当前的hi大，那么hi就是结果
+                if(hi!=0 && nums[hi] < nums[hi-1]){
+                    lo = hi;
+                    break;
+                }
+                else hi--;
+            }
+        }
+        return nums[lo];
+```
+
