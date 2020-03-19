@@ -32,6 +32,7 @@
 
 **解决方法：让mind = (i+j+1)/2，而不是上边的（i+j)/2，The easiest way to achieve this is by making mid biased to the right, i.e. mid = (i+j)/2+1.由于，我们永远都不会让j = mid，所以这样就解决了问题。而寻找左边界的时候，永远都不会让i=mid，所以可以让mid biased to the left**
 
-
+* 左边界：mid = lo + (hi - lo)/2
+* 右边界：mid = lo + (hi - lo +1)/2
 
 
