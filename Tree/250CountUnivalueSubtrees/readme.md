@@ -28,5 +28,5 @@ Output: 4
 
 * 定义一个全局变量count，在每一个root的测试结束后，如果该root引领的tree符合条件，那么count++
 * 每一个root的检查是自下而上的，所以是DFS，先check不为null的left child是否符合上边的两个条件，然后再check不为null的right child是否符合条件，最后如果都符合，那么该root满足条件，count++
-* 于是
+* 于是，算是**Postorder**吧。。
 
