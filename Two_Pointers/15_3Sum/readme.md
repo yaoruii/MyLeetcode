@@ -27,7 +27,9 @@ If it exists, we have found a solution and return immediately.
 这道题不要求返回索引，所以可以sort(), 然后在剩下的数组中使用两头夹击方法寻找pairs。
 
 # 18 4Sum
-## general KSum
+**比3sum多一层loop用于第二个元素即可，确定第一个后，遍历第二个：每次确定一个元素作为第二个，然后从剩下的数中，*1，和3sum中是一样的：寻找一个pair和为t，使用two pointer寻找pair(当我们可以排序的时候）。2，和2sum一样，当不可以排序的时候。
+
+# general KSum
 
 
 
