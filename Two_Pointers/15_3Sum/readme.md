@@ -27,8 +27,7 @@ If it exists, we have found a solution and return immediately.
 这道题不要求返回索引，所以可以sort(), 然后在剩下的数组中使用两头夹击方法寻找pairs。
 
 # 18 4Sum
-
-# general KSum
+## general KSum
 
 
 
