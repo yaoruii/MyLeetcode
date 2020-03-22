@@ -9,7 +9,7 @@ Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [
 
 **同样都是找出所有符合条件的子数组，和相似题:[713Subarray Product Less Than K](https://github.com/yaoruii/MyLeetcode/tree/master/Two_Pointers/713SubarrayProductLessThanK)一样，为了找出所有的可能数组，无论长度为多少：**
 * **当end固定后，以end结尾的所有子数组的个数为end-start+1，即滑窗的长度。**
-## two sliding windows
+## two sliding windows: 144ms,5%
 * Create two windows with a 'given end ptr' --> Note, this is very important. End ptr will always be fixed and same for the two windows in any given iteration.
     * i. First window is where the startPtr points such that the given subArray has <= K distinct integers
     * ii. Second window is where the startPtr points such that the given subArray has < K distinct integers
@@ -22,3 +22,7 @@ With above concept,
   and M = endPtr - startPtr2  
   N - M = startPtr2 - startPtr1  
   Continue doing this till endPtr iterates from start till end of the input array
+
+**看了其他人对上述描述的实现代码，牛逼啊，基本上就像伪代码一样把上边的捋了一遍，任重道远啊**
+
+## 
