@@ -5,9 +5,9 @@ Output: 7
 Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].
 ```
 
-**这道题之所以不可以用相似题：[340最长的至多包含K个不同元素的子字符串](https://github.com/yaoruii/MyLeetcode/tree/master/Sliding_window/159%E6%B1%82%E6%9C%80%E5%A4%9A%E5%8F%AA%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6)是因为：本题不是让求最长的那个长度，而是所有满足条件的子数组，包括最长最短及中间长度的所有可能结果。**
+**这道题之所以不可以用相似题：[340最长的至多包含K个不同元素的子字符串](https://github.com/yaoruii/MyLeetcode/tree/master/Sliding_window/159%E6%B1%82%E6%9C%80%E5%A4%9A%E5%8F%AA%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6)是因为：本题不是让求最长的那个长度，而是所有满足条件的子数组，包括最长最短及中间长度的所有可能结果。所以是把每一个right得到的个数加在一起。**
 
-**同样都是找出所有符合条件的子数组，和相似题:[713Subarray Product Less Than K](https://github.com/yaoruii/MyLeetcode/tree/master/Two_Pointers/713SubarrayProductLessThanK)一样，为了找出所有的可能数组，无论长度为多少：**
+**同样都是找出所有符合条件的子数组，和相似题:[713Subarray Product Less Than K](https://github.com/yaoruii/MyLeetcode/tree/master/Two_Pointers/713SubarrayProductLessThanK),两题的不同之处：713是乘积小于K，即至多K，无论是多少只要小于K即可，992如果也是至多K个不同的元素，即map.size()<=K,那么就是一道经典的滑窗题，和上边的340一样。子数组的个数：**
 * **当end固定后，以end结尾的所有子数组的个数为end-start+1，即滑窗的长度。**
 ## two sliding windows: 144ms,5%
 * Create two windows with a 'given end ptr' --> Note, this is very important. End ptr will always be fixed and same for the two windows in any given iteration.
@@ -25,4 +25,6 @@ With above concept,
 
 **看了其他人对上述描述的实现代码，牛逼啊，基本上就像伪代码一样把上边的捋了一遍，任重道远啊**
 
-## 
+## holy shit!!!!!转换为：求至多包含K个不同元素的题
+就像上边分析的那样，至多K个不同元素很经典，那么K个元素只需要往前再进一步：   
+**exactly(K) = atMost(K) - atMost(K-1)**
