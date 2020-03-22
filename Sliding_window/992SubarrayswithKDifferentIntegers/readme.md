@@ -2,7 +2,8 @@
 ```
 Input: A = [1,2,1,2,3], K = 2
 Output: 7
-Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].
+Explanation: Subarrays formed with exactly 2 different integers:  
+[1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].
 ```
 
 **这道题之所以不可以用相似题：[340最长的至多包含K个不同元素的子字符串](https://github.com/yaoruii/MyLeetcode/tree/master/Sliding_window/159%E6%B1%82%E6%9C%80%E5%A4%9A%E5%8F%AA%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6)是因为：本题不是让求最长的那个长度，而是所有满足条件的子数组，包括最长最短及中间长度的所有可能结果。所以是把每一个right得到的个数加在一起。**
@@ -30,3 +31,19 @@ With above concept,
 * **exactly(K) = atMost(K) - atMost(K-1)**
 * 但是时间并没有提升
 * 但是不管了，我稀罕这个方法
+
+# 930. Binary Subarrays With Sum
+```
+Input: A = [1,0,1,0,1], S = 2
+Output: 4
+Explanation: 
+The 4 subarrays are bolded below:
+[1,0,1,0,1]
+[1,0,1,0,1]
+[1,0,1,0,1]
+[1,0,1,0,1]
+```
+**和992一道题：至多s个1，很简单，遍历到当前的right就去帮right配对，找子数列最多的left(即最小的left),然后把所有的right的个数加在一起，就是所有的个数。**
+
+
+
