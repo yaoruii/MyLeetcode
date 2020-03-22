@@ -27,4 +27,5 @@ With above concept,
 
 ## holy shit!!!!!转换为：求至多包含K个不同元素的题
 就像上边分析的那样，至多K个不同元素很经典，那么K个元素只需要往前再进一步：   
-**exactly(K) = atMost(K) - atMost(K-1)**
+* **exactly(K) = atMost(K) - atMost(K-1)**
+* 编写
