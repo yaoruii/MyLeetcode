@@ -14,7 +14,7 @@
 
 * 为了将p和q所在的set结合，要将所有和p的id一样的entries的id: id[p] 改成 id[q].
 
-**Quick find is too slow: **
+**Quick find is too slow:**
 
 把获取数组的次数当作cost model的话：number of array accesses
 
@@ -37,7 +37,7 @@
 
 * 为了将p和q所在的set结合，将p的root的id 改成q的root。即将p的root成为q的root的一个孩子。
 
-**Quick union is also too slow: **
+**Quick union is also too slow:**
 
 把获取数组的次数当作cost model的话：number of array accesses
 
@@ -66,7 +66,7 @@
 
 改善二：+ 路径压缩
 
-**在计算完p的root后，将每一个被检查过的node都直接指向该root **
+**在计算完p的root后，将每一个被检查过的node都直接指向该root**
 
 有两种实现方法：
 
