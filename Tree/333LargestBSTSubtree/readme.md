@@ -25,3 +25,4 @@ Explanation: The Largest BST Subtree in this case is the highlighted one.
 * 如果不满足大小关系：该node1为root的树不是BST,就把node1返回的size = -1,意味着以node1为root的树不是bst
 * 如果该node1的某个孩子不是BST，也就是某个孩子的size = -1,那么node1为root的树不是bst，所以也让node1的size= -1.
 * 以上两种情况是满足不是BST的情况。
+* 最后返回root的result的时候，要将root.val和left.lower和right.upper分别比较，因为root的这两个孩子可能有null，最大最小值可能就是root.val。
