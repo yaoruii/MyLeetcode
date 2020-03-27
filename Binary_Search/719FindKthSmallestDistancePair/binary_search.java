@@ -1,27 +1,28 @@
 class Solution {
     public int smallestDistancePair(int[] nums, int k) {
-        // firt sort the original nums so that we could apply the sliding window properly
+        //应该是允许重复的距离也算数的
+        int n = nums.length;
         Arrays.sort(nums);
-        // in range [0, N-1], min dist is 0, max dist is the dist between max and min num in nums
-        int N = nums.length;
-        int lo = 0, hi = nums[N - 1] - nums[0];
-        while (lo <= hi) {
-            // check if mid might be the kth dist
-            int mid = lo + (hi - lo) / 2;
-            // sliding window: for each `end` index, find the `start` so that
-            // 1) in subarray [start, end], max dist == nums[end] - nums[start] <= m
-            // 2) [start, end] is the longest subarray, which means start is min index satisfying condition 1
-            int count = 0, maxDist = 0;
-            for (int start = 0, end = 0; end < N; end++) {
-                while (nums[end] - nums[start] > mid) start++;  // adjust start to satisfy conditions
-                if (start < end) {
-                    count += end - start;          // count num of pair ending with `end` and with dist <= m
-                    maxDist = Math.max(maxDist, nums[end] - nums[start]); // mid might not be the exact dist, we need to keep the real dist along the way
+        int lo = 0; int hi = nums[n-1] - nums[0]; int mid;
+        while(lo <= hi){
+            //traversal search space
+            mid = lo + (hi - lo)/2;
+            int count = 0; int maxdis = 0;//dis是正数，排序后符合
+            int right = 1;
+            //计算该mid下的count(mid)
+            for(int left = 0; left< n; left++){
+                while(right < n && nums[right] <= nums[left] +mid){
+                    right++;
                 }
+                //如果是因为right==n退出的，说明所有的数都<=右侧，都算进去
+                //细节：因为是pair，所以要除去left处的元素自身
+                count += right - left -1;
+                maxdis = Math.max(maxdis, nums[right-1] - nums[left]);
             }
-            if (count == k) return maxDist;
-            else if (count < k) lo = mid + 1;
-            else hi = mid - 1;
+            if(count == k) return maxdis;
+            else if(count < k) lo = mid+1;
+            else hi = mid-1; //为什么不能为mid：
+            //为mid后，当hi = lo=mid后，就困在这里了。
         }
         return lo;
     }
