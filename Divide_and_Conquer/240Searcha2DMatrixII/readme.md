@@ -9,3 +9,9 @@
 * 当col到达最后一列的时候还是比target小，继续右移col，超过了矩阵的范围，结束，不存在target。
 
 ## divide and conquer!
+ **Intuition:**
+ 可以把该二维矩阵分成四个，其中两个肯定不包含target，其中两个可能包含target
+ **算法**
+ 1，base case：如果二维数组的元素个数为0，或者，target小于最小的元素（左上角），或者大于最大的元素（右下角），那么肯定是不包含target的。
+ 2，
+ 
