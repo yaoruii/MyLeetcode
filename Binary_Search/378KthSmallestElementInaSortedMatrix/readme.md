@@ -19,6 +19,13 @@ return 13.
 
 [这个人总结的378模版](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/discuss/85173/Share-my-thoughts-and-Clean-Java-Code)，[719，同一个模版](https://leetcode.com/problems/find-k-th-smallest-pair-distance/discuss/143604/Java-Binary-Search-+-Sliding-window-With-Line-by-Line-Comments)
 
+基于这些人的总结写的总结在719了，378是如何变形的呢？
+* 构建候选solution：整数
+* 搜索范围：719和378都是基于range的搜索，719是两数之差，378是二维矩阵里面的数据本身
+* 验证solution:count(num)是小于等于num的元素个数，第k个元素就是是的count(num)>=k的最小的数。
+* 如何计算count(num):从右上角开始，寻找第一行第一个<=num的数，然后row++，直接从上一行的col那里开始col的遍历。count()时追踪这些数中最大的数。
+* 如何遍历搜索范围：二分法，和719一样，不再重复
+
 
 ## Heap
 **核心在于：minheap这一队列本来就是按照从小到大的顺序排列的（兼容重复数），所以当每次都poll()一个元素出来，第K次poll的就是第K小的元素，但是每次poll（）后要把该元素x在原数组中对应的下一行的元素offer()进去，因为下一个最小数可能是已经存在minheap中的x右侧的元素y，也可能是还未进入minheap的x下方的元素z，所以要把z放进去，然后再下一次poll()，得到的结果才是这一次的最小值。**
