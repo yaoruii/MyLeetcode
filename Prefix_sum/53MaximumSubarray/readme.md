@@ -9,6 +9,22 @@
 所以，操作的顺序很关键：
 * min_pre必须是j之前的索引的prefix中的最小的，也就是说**把当前的pre[j]和min_pre的比较更新min_pre时，已经完成了sum和(pre[j]-min_pre)进行比较最大值更新sum的操作。
 
-## follow up:divide and conquer法
+## follow up:[divide and conquer][]
+
+解析说这题是divide and conquer典型的例题之一，能够使用和**merge sort**相似的算法解决。
+
+Let's follow here a solution template for the divide and conquer problems :（厉害了）
+* 定义base case(s)
+* 把问题分割为子问题，然后迭代式地解决他们。
+* 将子问题的解决方法合并，得到原始问题的solution。
+
+对应这道题：
+* base case：n=1，return 这个元素。
+* 变量left_sum =  **maxSubArray** for the left subarray,左侧的子数组的最大的子数组和，**何为左侧子数组？the first n/2 numbers (middle element at index (left + right) / 2 always belongs to the left subarray).前n/2个元素，中间的元素mid=(left+right)/2永远属于左侧的数组。**
+* 同理，变量right_sum = **maxSubArray** for the right subarray, for the last n/2 numbers.
+* 变量cross_sum = maximum sum of the subarray containing elements from both left and right subarrays and hence crossing the middle element at index (left + right) / 2：包含来自左侧子数组元素和来自右侧子数组元素的的子数组的最大和，因为肯定穿过中间元素(left + right) / 2。
+* Merge the subproblems solutions, i.e. return max(left_sum, right_sum, cross_sum).
+
+
 
 
