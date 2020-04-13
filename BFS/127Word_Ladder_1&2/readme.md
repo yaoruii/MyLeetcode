@@ -34,6 +34,14 @@ between words which differ by just one letter.The problem boils down to finding 
 
 ## bidirection bfs
 
+> We can considerably cut down the search space of the standard breadth first search algorithm if we launch two simultaneous BFS.One from the beginWord and one from the endWord. We progress one node at a time from both sides and at any point in time if we find a common node in both the searches, we stop the search. 
+
+* The only difference is we now do BFS starting two nodes instead of one. This also changes the termination condition of our search.
+* 终止条件如何被更改：需要两个marked的map去追踪node是否已经被遍历。一旦，我们发现**一个node在另一个平行的search中已经被标记，说明已经找到交点，再中间相遇，所以stertword和endword之间存在一条最短路径**
+* 总的路径长为两个搜索中相遇的node的level的和。
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gds6hxmls5j30ta0i4wje.jpg)
+
+
 
 
 
