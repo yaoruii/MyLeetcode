@@ -32,6 +32,6 @@ if(root.val <= p.val) return successor(root.right, p);
 if(root.val > p.val){
     TreeNode left = successor(root.left,p);
     left = left != null? left: root;
-    return root;
+    return left;
 }
 ```
