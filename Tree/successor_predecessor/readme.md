@@ -35,3 +35,6 @@ if(root.val > p.val){
     return left;
 }
 ```
+# Predecessor
+
+**和求successor的思路是
