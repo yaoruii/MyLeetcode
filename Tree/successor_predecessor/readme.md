@@ -37,4 +37,7 @@ if(root.val > p.val){
 ```
 # Predecessor
 
-**和求successor的思路是
+**和求successor的思路是一样的，唯一的区别是大小关系的比较：**
+* root>= p: 要寻找比p小的node，那么该node只有可能出现在root的左分支。类似于，求successor时，root<=p,p's successor只有可能出现在root的right child中。
+* root<p:比p小的node，可能和p一样属于root的右分支，也可能就是root本身，所以，类似于，求successor时，root>p,p的successor可能在root的左孩子，也有可能是root本身。
+
