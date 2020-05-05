@@ -26,4 +26,4 @@ Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
  
  这样排完序后，形成的紫色的区间，所有的重叠都属于**相交重叠**，使用两个指针，two pointers，一个指向最终的区间开始，一个指向最终的区间结束的位置，这样最终的区间就是```start[startidx]~end[endidx]```
  
-  
+ 所以，要找到正确的startidx和endidx的位置！
