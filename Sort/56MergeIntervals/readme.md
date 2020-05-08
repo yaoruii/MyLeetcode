@@ -29,4 +29,4 @@ Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
  所以，要找到正确的startidx和endidx的位置！
 
 # 变形题：252. Meeting Rooms
-也是给定
+也是给定一组区间，是每一个会议开会的时间段，和56题是一样的形势：**看看你能不能赶的
