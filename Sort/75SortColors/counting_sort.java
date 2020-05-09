@@ -28,7 +28,18 @@ class Solution {
             else nums[i]=2;
         }
         
-        
-        
+        int i =0;int lt = 0; int gt = len-1;
+        while(i<= gt){
+            if(nums[i]==0) exch(nums,lt++, i++);
+            else if(nums[i]==2) exch(nums,i,gt--);
+            else i++;
+        }
     }
+    private void exch(int[] nums, int i, int j){
+        int tmp = nums[j];
+        nums[j] = nums[i];
+        nums[i] = tmp;
+    }
+        
+    
 }
