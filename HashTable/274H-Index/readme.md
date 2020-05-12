@@ -17,3 +17,4 @@ Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of 
     * 同时，要满足```a[i-1]<=h && h<=a[i]```，这样，才可以说```至少为h的元素个数为h```
     * 注意：剩下的元素从a[0]到a[i-1]都是不超过h，因此，h可以等于a[i-1]。
     
+# hash table ??
