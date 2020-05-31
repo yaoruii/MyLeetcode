@@ -24,3 +24,44 @@
       * 如果 未腐烂的水果数 = 0，那么应该返回 ```while执行的次数-1```
 * 当队列为空时，结束循环。判断最后结果应该为多少。
 
+# DC：during coding（编程过程中）
+* 向dirs这种二维数组，里面的内容是固定的，可以使用`int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};//还可以这样写！`这种直接赋值的方法。
+
+```java
+class Solution {
+    public int orangesRotting(int[][] grid) {
+        if(grid == null || grid.length == 0) return 0;
+        int row = grid.length; int col = grid[0].length;
+        Queue<int[]> fringe = new LinkedList<>();
+        int count = -1, fresh = 0;
+        for(int i=0; i<row; i++){
+            for(int j=0; j<col; j++){
+                if(grid[i][j] == 2) fringe.offer(new int[]{i,j});//队列存储腐败的水果，这是第一批
+                if(grid[i][j] == 1) fresh++;
+            } 
+        }
+        if(fresh == 0) return 0;//一开始就没有腐败的果实。
+        int size;
+        int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};//还可以这样写！！
+        while(!fringe.isEmpty()){
+            count++;
+            size = fringe.size();
+            for(int i = 0; i<size; i++){//这一批腐败的水果在一个while内搞完
+                int[] pos = fringe.poll();
+                for(int[] dir: dirs){
+                    int r = pos[0]+dir[0];
+                    int c = pos[1]+dir[1];
+                    if(r<0 || r>=row || c<0 || c>= col || grid[r][c] == 2 || grid[r][c]==0) continue;//下边的代码都不会被执行了
+                    if(grid[r][c] == 1){
+                        grid[r][c] =2;
+                        fringe.offer(new int[]{r,c});
+                        fresh--;
+                    }
+                }
+            }
+        }
+        return fresh == 0 ? count:-1;
+
+    }
+}
+```
