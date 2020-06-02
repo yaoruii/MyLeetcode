@@ -20,3 +20,8 @@ The first and second parts are straightforward; we'll leave you to look at the c
 **然后，根据依赖关系，使用list代表出graph**
 
 [官方的solution写的不错](https://leetcode.com/problems/alien-dictionary/solution/)
+
+## DC:
+第三点就不再叙述了，使用的是bfs。
+
+前两点，得到graph的过程，写的代码又臭又长，而且，没有想到很多cases，大概sumbit了很多很多很多次，才把118个case通过。。。想到了用map来映射outgoing关系，这个值得表扬，但是好多case没想到，后来在代码上添添改改的，很ugly，明天学习一下答案的代码。
