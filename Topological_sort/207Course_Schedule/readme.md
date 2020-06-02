@@ -16,4 +16,4 @@
 ### dfs:
 由于**210. Course Schedule II**，和这一题基本上一样，不过最后输出该拓扑排序的结果，其在上一题的bfs的代码中，我也已经实现，所以，210决定使用dfs的方法
 
-[见算法文件夹中关于拓扑排序的总结]()
+[见算法文件夹中关于拓扑排序的总结](https://github.com/yaoruii/MyLeetcode/blob/master/Algorithms/topological_sort.md)
