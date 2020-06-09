@@ -23,4 +23,19 @@
 i之后被刺穿的气球j的特征：j的starting position小于x=bollean[i][1]这一点，即覆盖**
 
 
+### During Coding:
+**nx2的二维数组，根据每一行的第二列进行排序，也挺难的：**
+
+谷歌了一下：按照某一列对数组进行排序，**使用比较器构建内部类**
+
+```java
+Arrays.sort(arr, new Comparator<int[]>() {
+    @Override
+    public int compare(int[] o1, int[] o2) {
+        return o1[1] - o2[1];//改下o1和o2的位置，就是从大到小排序
+    }
+});
+```
+
+
 
