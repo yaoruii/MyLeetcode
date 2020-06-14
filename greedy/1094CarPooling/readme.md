@@ -64,3 +64,19 @@ class Solution {
 * 剩下的和上一个方法都一样：累加变化量就是当前的结果。
 * nlog(n)
 * 不如数组的方法performence好。
+
+```java
+TreeMap<Integer, Integer> points = new TreeMap<>();
+for(int[] trip:trips){
+    points.put(trip[1], points.getOrDefault(trip[1], 0)+trip[0]);
+    points.put(trip[2], points.getOrDefault(trip[2], 0)-trip[0]);
+}
+int num = 0;
+for(Map.Entry<Integer, Integer> entry: points.entrySet()){
+    num += entry.getValue();
+    if(num>capacity) return false;
+}
+return true;
+```
+
+
