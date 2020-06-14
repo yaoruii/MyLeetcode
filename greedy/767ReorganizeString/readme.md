@@ -3,7 +3,7 @@
 Input: S = "aab"
 Output: "aba"
 ```
-
+先把出现次数最多的元素放好，然后剩下的按照step=2一个个地当进去，到头了，就回来从1开始继续按照step=2放置，直到再次到头，放置完成。
 ```java
 class Solution {
     public String reorganizeString(String S) {
