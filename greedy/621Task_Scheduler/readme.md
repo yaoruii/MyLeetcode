@@ -28,5 +28,17 @@ There is at least 2 units of time between any two same tasks.
 
 * 3，到目前为止，和我的思路一样，所以，到底哪里导致我错了呢？
 
-* 4, A separated the line into `partnum = count(A)-1` parts(小学的种树和装路灯问题，亲娘类), every part has lebgth n, so the total empty slots will be `partnum * n`, we can also get the total num of rest tasks which will be `numm
-4，if there are more than one tasks with most frequency? like 3A 3B 2C: `A ? ? A ? ? A`, then `A B ? A B ? A B`, but we can see AB as X,like `X ? X ? X`. so the 
+* 4, A separated the line into `partnum = count(A)-1` parts(小学的种树和装路灯问题，亲娘类), every part has lebgth n, so the total empty slots will be `emptyslots = partnum * n`, we can also get the total num of rest tasks which will be `resttask = task.length - count(A)`, if `emptyslots > resttask`, then we have to use idle to fill the empty slots, so the num of idle is `numidle = max(0, emptyslots-resttask)`.
+
+* 5，**ONE SPCIAL CASE:** if there are more than one tasks with most frequency? like 3A 3B 2C: `A ? ? A ? ? A`, then `A B ? A B ? A B`, but we can see AB as X,like `X ? X ? X`. so the the length of each part becomes n-1, so we can get general expressions:  
+`partnum = count(A)-1；`  
+`emptyslots = partnum * (n - num of tasks with the most frequency +1)`;  
+`resttask = task.length - num of tasks with the most frequency * count(A）;`
+`numidle = max(0, emptyslots-resttask);  `
+`result = task.length + numidle`
+
+
+* 6, what if we have more than n task with the most frequency like n+1 tasks, they will fill the parts like `A B C | A B C`，with 3 A 3B AND 3C, or if we have 3A 3B 3C 3D 2E, n= 2, we will get `A B C | A B C | A B C`, then for D, **this is the key point which makes my solution wrong, since we have met the minimum distance n, we can always make each part longer. So we do not have to begin a new part for D and E, we can just put D and E into those existing parts like `A B C D E| A B C D E| A B C D|`, this is totally right and have to be the right minimum length of result**. 
+
+* 7, we can see the case like this we put all tasks with the most frequency together like ABCD, we meet the requirement we done the job. **emptySlots < 0 means you have already got enough tasks to fill in each part to make arranged tasks valid. But as I said you can always put more tasks in each part once you met the "minimum" requirement.**
+
